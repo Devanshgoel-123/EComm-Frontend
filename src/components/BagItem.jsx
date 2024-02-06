@@ -29,9 +29,7 @@ const BagItem=({item})=>{
         <span className="original-price">Rs {item.original_price}</span>
         <span className="discount-percentage">({item.discount_percentage}% OFF)</span>
       </div>
-      <div className="return-period">
-        <span className="return-period-days">{item.return_period} days</span> return available
-      </div>
+      
     </div>
     <div className="quantity">
       <IoMdAdd className="sign" onClick={handleAdd}/>

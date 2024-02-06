@@ -5,11 +5,11 @@ import { FaUser } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { IoHomeSharp } from "react-icons/io5";
 import {categoryActions} from "../store/activeCategory";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useEffect } from "react";
 const Navbar=()=>{
     const searchElement=useRef();
-  
+    const [display,setDisplay]=useState(true)
     // const userSearch=searchElement.current.value;
 
     const dispatch=useDispatch();
@@ -24,26 +24,39 @@ const Navbar=()=>{
       }, [dispatch]);
     
     const itemNumber=bagItems.length;
+
+    
+    const handleDisplay=()=>{
+        console.log(display)
+        setDisplay(!display);
+    }
+    
     return <>
     <div className="Navbar">
     
        <Link to="/" onClick={()=>handleClick("")}><IoHomeSharp /></Link>
-        <ul style={{listStyle:"none"}}>
+       <div id="categoryDiv">
+       <button id="categoryBtn" onClick={handleDisplay}>Categories</button>
+        <ul style={{listStyle:"none"}} className={`${display ? "inactive" :"active"}`}>
             <Link to="/"><li style={{color:"#000000",textDecoration:"none"}}  onClick={()=>{handleClick("Electronics")}}>Electronics</li></Link>
             <Link to="/"><li style={{color:"#000000",textDecoration:"none"}} onClick={()=>{handleClick("Clothing")}}>Clothing</li></Link>
-            <Link to="/"><li style={{color:"#000000",textDecoration:"none"}} onClick={()=>{handleClick("Health")}}>Health</li></Link>
             <Link to="/"><li style={{color:"#000000",textDecoration:"none"}} onClick={()=>{handleClick("Grocery")}}>Grocery</li></Link>
-            <Link to="/"><li style={{color:"#000000",textDecoration:"none"}} onClick={()=>{handleClick("Toys")}} >Toys</li></Link>
+            
         </ul>
+       </div>
+        <div className="rightSection">
+            <div className="userProfile">
+            <button style={{color:"#ffffff",backgroundColor:"rgb(8, 81, 249)",borderRadius:"15px",height:"30px"}} >Wallet</button>
+            <Link to="#" style={{textDecoration:"none",color:"#000000",fontSize:"15px"}}><FaUser /> {activeUser.userName}</Link>
+            </div>
+            <Link to="/bag"className="bagIcon" ><FaBagShopping />  {itemNumber}</Link>
+        </div>
         <div className="inputBox">
         <FaSearch/>
         <input name="search" placeholder="Search for a Products, Brands and More" ref={searchElement}></input>
         </div>
         
-        <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between",width:"8%",height:"20px",alignItems:"center"}}>
-            <Link to='/profile' style={{textDecoration:"none",color:"#000000",fontSize:"15px",marginRight:"20px"}}><FaUser /> {activeUser.userName}</Link>
-            <Link to="/bag" style={{textDecoration:"none",color:"#000000"}}><FaBagShopping />  {itemNumber}</Link>
-        </div>
+        
     </div>
     </>
 }

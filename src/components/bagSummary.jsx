@@ -59,45 +59,48 @@ const bagSummary=()=>{
     <p className="summary-head-text">
       Complete your purchase item by providng your payment details order.
     </p>
-    <div style={{display:"flex",flexDirection:"column",width:"80%"}}>
+    <div className="billingInputs">
     <label className="input-heading">Email Address</label>
     <input type="email" placeholder="@   devanshgoel@gmail.com" className="inputField" ref={emailElement}></input>
    </div>
-   <div style={{display:"flex",flexDirection:"column",width:"80%",borderStyle:"none"}}>
+   <div className="billingInputs">
     <label className="input-heading">Card Detail</label>
-    <div style={{display:'flex',flexDirection:"row",justifyContent:"left",overflow:"hidden"}}>
-    <input type="text" placeholder="Card Number" className="inputField" style={{width:"50%"}} name="cardNumber" ref={cardNumberElement}></input>
-    <input type="month" placeholder="MM/YY" style={{textAlign:"right",width:"25%"}} className="inputField" name="month" ref={expiryDateElement}></input>
-    <input type="number" placeholder="CVV" style={{textAlign:"center",width:"25%"}} className="inputField" name="cvv" ref={cardCvvElement}></input>
+    <div className="billingDetails">
+    <input type="text" placeholder="Card Number" className="inputField" name="cardNumber" ref={cardNumberElement}></input>
+    <input type="month" placeholder="MM/YY"  className="inputField" name="month" ref={expiryDateElement}></input>
+    <input type="number" placeholder="CVV" className="inputField" name="cvv" ref={cardCvvElement}></input>
     </div> 
     
    </div>
-   <div style={{display:"flex",flexDirection:"column",width:"80%"}}>
+   <div className="billingInputs">
     <label className="input-heading">Card Holder</label>
     <input type="text" placeholder="Devansh Goel" className="inputField" name="name" ref={cardNameElement}></input>
    </div>
-   <div style={{display:"flex",flexDirection:"column",width:"80%"}} >
+   <div className="billingInputs" >
    <label className="input-heading">Billing Address</label>
     <input type="text" placeholder="Ram Bhawan Bits Pilani 2130" className="inputField" name="address" ref={addressElement}></input>
    </div>
-   <div  style={{display:"flex",flexDirection:"column",width:"80%"}}>
-     <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between",height:"40px",alignItems:"center"}}>
+   <div  id="billing">
+     <div className="billElement">
       <p>SubTotal </p>
       <p>{totalMrp}</p>
      </div>
-     <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between",height:"40px",alignItems:"center"}}>
+     <div className="billElement">
      <p>Discount </p>
       <p>{totalDiscount}</p>
      </div>
      <div >
       <hr></hr>
      </div>
-     <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between",height:"40px",alignItems:"center"}}>
+     <div className="billElement">
      <p>Total </p>
       <p>{finalPrice}</p>
      </div>
    </div>
+   <div className="btnDiv">
    <button type="submit" className="orderBtn">Place Order</button>
+   </div>
+   
    </Form>
 }
 export default bagSummary;

@@ -16,8 +16,41 @@ body{
   font-weight: 700;
   box-shadow: 10px 10px 40px rgb(148, 148, 150);
 }
-.Navbar ul{
- padding-left: 0;
+.rightSection{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 14%;
+  align-items: center;
+}
+.bagIcon{
+  text-decoration: none;
+  color: black;
+  display: flex;
+  gap: 5px;
+}
+.userProfile{
+  display:flex;
+  flex-direction: row;
+  gap: 25px;
+  justify-content: left;
+  align-items: center;
+  width: 75%;
+}
+#categoryBtn{
+  color: #7b7b7b;
+  background-color:rgb(216, 216, 216);
+  border:none;
+  border-radius: 15px;
+  height: 30px;
+  display: none;
+}
+
+.inactive{
+  display: none;
+}
+.active{
+  padding-left: 0;
   height: 80px;
   width: 35%;
   display: flex;
@@ -27,7 +60,6 @@ body{
   list-style: none;
   color:rgb(41, 41, 41);
   margin: 0;
-  
 }
 .Navbar li{
   height: 80%;
@@ -37,11 +69,11 @@ body{
   justify-content: center;
   border:2px solid white;
   text-align: center;
-  
 }
 li:hover{
   border-bottom: 5px solid rgb(252, 8, 232);
 }
+
 .inputBox{
   height: 50px;
   display: flex;
@@ -203,7 +235,7 @@ li:hover{
   font-size: 14px;
   line-height: 15px;
   color: #282c3f;
-  white-space: nowrap;
+  
 }
 .current-price {
   font-size: 14px;
@@ -226,7 +258,6 @@ li:hover{
 
 .item-container {
     margin: 10px;
-    flex-basis: 20%;
     background-color: #edecec;
     border-radius: 20px;
     max-width: 100%;
@@ -241,7 +272,6 @@ li:hover{
     align-items: center;
 }
 .item-image {
-
   margin:10px 5% ;
   width:90%;
   height: 30vh;
@@ -419,3 +449,720 @@ li:hover{
     .formElement a {
       color: #007bff;
     }
+    #billing{
+      display: grid;
+      grid-template-columns:100%;
+      text-align:center ;
+      
+    }
+.billElement{
+  p{
+    margin:0;
+  }
+  display: grid;
+  grid-template-columns: 50% 50%;
+  text-align: center;
+}
+
+.bag-page{
+  height: auto;
+}
+
+
+    @media only screen and (max-width: 399px){
+      .items-container {
+        width: 95%;
+        padding: 0 2.5%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        margin-top: 50px;
+        align-items: center;
+    }
+    .Navbar{
+      width: 90%;
+      display: flex;
+      padding: 10px 20px 0;
+      flex-direction: row;
+      flex-wrap: wrap;
+      
+    }
+
+    .Navbar ul{
+      width: 20%;
+      padding: 10px;;
+    }
+    .inactive{
+      display: none;
+    }
+    .Navbar li{
+      height: 80%;
+    }
+    
+    .active{
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 5vh;
+      left:15vw;
+      
+      animation: categoryBox 1s;
+      transition: ease-in 1s;
+    }
+    @keyframes categoryBox {
+      from{
+        opacity: 0;
+      }
+      to{
+        opacity: 1;
+      }
+    }
+    .inputBox{
+     flex-basis: 100%;
+      margin:10px 0;
+      padding-left:10px;
+      border-radius: 20px;
+      height: 30px;
+     
+    }
+    .inputBox input{
+      overflow: hidden;
+      margin-right: 20px;
+    }
+    .rightSection{
+      flex-basis: 50%;
+      display: flex;
+     width: 100%;
+      gap: 10px;
+      justify-content: left;
+    }
+    .userProfile{
+      display: grid;
+      grid-template-columns: 45% 40%;
+    }
+    #categoryBtn{
+      display: inline-block;
+      padding: 0 20px;
+      font-size: 13px;
+      border-radius: 0;
+    }
+    .bag-page{
+      display: flex;
+      flex-direction: column;
+      padding: 0 2.5%;
+    }
+    .bag-items-container{
+      width: auto;
+     padding: 30px 20px;
+     padding-right:0 ;
+      p{
+       font-size: 14px;
+       width: 80%;
+      }
+    }
+    .bag-item-container{
+      position: relative;
+      display: flex;
+      flex-direction:row ;
+      flex-wrap: wrap;
+      justify-content: left;
+      padding: 10px;
+      
+      gap: 10px;
+    }
+    .bag-item-img{
+      flex-basis: 20%;
+    }
+    .item-right-part{
+      
+      flex-basis: 50%;
+      font-size: 10px;
+      line-height: 1.4;
+      padding: 0;
+      
+     
+    }
+    .quantity{
+      flex-basis: 10%;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 10px;
+      gap: 0;
+    }
+    .remove-from-cart{
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+    .bag-Summary{
+      padding: 30px 20px;
+      width: auto;
+      p{
+        font-size: 14px;
+        width: 80%;
+      }
+      .inputField{
+        width:90%;
+      }
+      .orderBtn{
+        width: 50%;
+      }
+      .billingInputs{
+        width: 100%;
+      }
+      .btnDiv{
+       display: flex;
+       justify-content: center;
+      }
+    }
+    .billingDetails{
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 10px;
+      column-gap: 20px;
+      align-items: left;
+    }
+    .billingDetails > :nth-child(1){
+      flex-basis: 100%;
+    }
+    .billingDetails > :nth-child(2),.billingDetails > :nth-child(3){
+      flex-basis: 35%;
+    }
+    
+    }
+    
+    
+    @media only screen and (min-width: 400px) and (max-width: 650px){
+      .items-container {
+        width: 95%;
+        padding: 0 2.5%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        margin-top: 100px;
+        align-items: center;
+    }
+    .Navbar{
+      width: 92%;
+      display: flex;
+      padding: 10px 20px 0;
+      flex-direction: row;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .Navbar ul{
+      list-style: circle;
+      padding: 10px;;
+    }
+    .inactive{
+      display: none;
+    }
+    .Navbar li{
+      height: 80%;
+      text-decoration: none;
+    }
+    
+    .active{
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      
+      width: 100%;
+      animation: categoryBox 1s;
+      transition: ease-in 1s;
+    }
+    @keyframes categoryBox {
+      from{
+        opacity: 0;
+      }
+      to{
+        opacity: 1;
+      }
+    }
+    .inputBox{
+     flex-basis: 100%;
+      margin:10px 0;
+      padding-left:10px;
+      border-radius: 20px;
+      height: 30px;
+     
+    }
+    .inputBox input{
+      overflow: hidden;
+      margin-right: 20px;
+    }
+    .rightSection{
+      flex-basis: 50%;
+      display: flex;
+     width: 100%;
+      gap: 10px;
+      justify-content: left;
+    }
+    .userProfile{
+      display: grid;
+      grid-template-columns: 45% 40%;
+    }
+    #categoryBtn{
+      display: inline-block;
+      padding: 0 20px;
+      font-size: 13px;
+      border-radius: 0;
+      width: 100%;
+    }
+    .price{
+      display: grid;
+      grid-template-columns: 35% 35% 30%;
+    }
+    .items-container{
+      margin-top: 20px;
+    }
+    #categoryDiv{
+      position: relative;
+    }
+    .bag-page{
+      display: flex;
+      flex-direction: column;
+      padding: 0 2.5%;
+    }
+    .bag-items-container{
+      width: auto;
+     padding: 30px 20px;
+     padding-right:0 ;
+      p{
+       font-size: 14px;
+       width: 80%;
+      }
+    }
+    .bag-item-container{
+      position: relative;
+      display: flex;
+      flex-direction:row ;
+      flex-wrap: wrap;
+      justify-content: left;
+      padding: 10px;
+      
+      gap: 10px;
+    }
+    .bag-item-img{
+      flex-basis: 20%;
+    }
+    .item-right-part{
+      
+      flex-basis: 50%;
+      font-size: 10px;
+      line-height: 1.4;
+      padding: 0;
+      
+     
+    }
+    .quantity{
+      flex-basis: 10%;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 10px;
+      gap: 0;
+    }
+    .remove-from-cart{
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+    .bag-Summary{
+      padding: 30px 20px;
+      width: auto;
+      p{
+        font-size: 14px;
+        width: 80%;
+      }
+      .inputField{
+        width:90%;
+      }
+      .orderBtn{
+        width: 50%;
+      }
+      .billingInputs{
+        width: 100%;
+      }
+      .btnDiv{
+       display: flex;
+       justify-content: center;
+      }
+    }
+    .billingDetails{
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 10px;
+      column-gap: 20px;
+      justify-content: left;
+    }
+    .billingDetails > :nth-child(1){
+      flex-basis: 90%;
+    }
+    .billingDetails > :nth-child(2),.billingDetails > :nth-child(3){
+      flex-basis: 35%;
+    }
+    }
+    
+    @media only screen and (min-width: 651px) and (max-width:800px) {
+      
+      .items-container {
+        width: 95%;
+        padding: 0 2.5%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        margin-top: 100px;
+        align-items: center;
+    }
+    .Navbar{
+      width:95vw;
+      display: flex;
+      padding: 10px 20px ;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .Navbar div ul{
+      display: flex;
+      flex-basis: 50%;
+      height: 40px;
+      align-items: center;
+      justify-content: space-around;
+      margin: 0;
+    }
+
+    #categoryBtn{
+      display: none;
+    }  
+    .inputBox{
+     flex-basis: 100%;
+      margin:10px 0;
+      padding-left:10px;
+      border-radius: 20px;
+      height: 30px;
+     
+    }
+    .inputBox input{
+      overflow: hidden;
+      margin-right: 20px;
+    }
+    .rightSection{
+      flex-basis: 40%;
+      display: flex;
+      width: 100%;
+      gap: 10px;
+      justify-content: center;
+    }
+    .userProfile{
+      display: grid;
+      grid-template-columns: 45% 40%;
+    }
+  
+    .price{
+      display: grid;
+      grid-template-columns: 35% 35% 30%;
+    }
+    .items-container{
+      margin-top: 20px;
+    }
+    .bag-page{
+      display: flex;
+      flex-direction: column;
+      padding: 0 2.5%;
+    }
+    .bag-items-container{
+      width: auto;
+     padding: 30px 20px;
+     padding-right:0 ;
+      p{
+       font-size: 16px;
+       width: 80%;
+      }
+    }
+    .bag-item-container{
+      position: relative;
+      display: flex;
+      flex-direction:row ;
+      flex-wrap: wrap;
+      justify-content: left;
+      padding: 10px;
+      
+      gap: 10px;
+    }
+    .bag-item-img{
+      flex-basis: 20%;
+    }
+    .item-right-part{
+      
+      flex-basis: 50%;
+      font-size: 10px;
+      line-height: 1.4;
+      padding: 0;
+      
+     
+    }
+    .quantity{
+      flex-basis: 10%;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 10px;
+      gap: 0;
+    }
+    .remove-from-cart{
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+    .bag-Summary{
+      padding: 30px 20px;
+      width: auto;
+      p{
+        font-size: 16px;
+        width: 80%;
+      }
+      .inputField{
+        width:90%;
+      }
+      .orderBtn{
+        width: 50%;
+      }
+      .billingInputs{
+        width: 100%;
+      }
+      .btnDiv{
+       display: flex;
+       justify-content: center;
+      }
+    }
+    .billingDetails{
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 10px;
+      column-gap: 20px;
+      justify-content: left;
+    }
+    .billingDetails > :nth-child(1){
+      flex-basis: 90%;
+    }
+    .billingDetails > :nth-child(2),.billingDetails > :nth-child(3){
+      flex-basis: 35%;
+    }
+    }
+
+    @media only screen and (min-width: 801px) and (max-width: 1000px){
+      
+      .items-container {
+        width: 95%;
+        padding: 0 2.5%;
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        margin-top: 100px;
+        align-items: center;
+    }
+    .Navbar{
+      width:95vw;
+      display: flex;
+      padding: 10px 20px ;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .Navbar div ul{
+      display: flex;
+      flex-basis: 50%;
+      height: 40px;
+      margin: 0;
+      align-items: center;
+      justify-content: space-around;
+      gap: 30px;
+    }
+
+    #categoryBtn{
+      display: none;
+    }  
+    .inputBox{
+     flex-basis: 100%;
+      margin:10px 0;
+      padding-left:10px;
+      border-radius: 20px;
+      height: 30px;
+     
+    }
+    .inputBox input{
+      overflow: hidden;
+      margin-right: 20px;
+    }
+    .rightSection{
+      flex-basis: 40%;
+      display: flex;
+      width: 100%;
+      gap: 10px;
+      justify-content: center;
+    }
+    .userProfile{
+      display: grid;
+      column-gap: 40px;
+      grid-template-columns: 45% 40%;
+    }
+  
+    .price{
+      display: grid;
+      grid-template-columns: 35% 35% 30%;
+    }
+    .items-container{
+      margin-top: 20px;
+    }
+    .bag-page{
+      display: flex;
+      flex-direction: column;
+      padding: 0 2.5%;
+    }
+    .bag-items-container{
+      width: auto;
+     padding: 30px 20px;
+     padding-right:0 ;
+      p{
+       font-size: 14px;
+       width: 80%;
+      }
+    }
+    .bag-item-container{
+      position: relative;
+      display: flex;
+      flex-direction:row ;
+      flex-wrap: wrap;
+      justify-content: left;
+      padding: 10px;
+      
+      gap: 10px;
+    }
+    .bag-item-img{
+      flex-basis: 20%;
+    }
+    .item-right-part{
+      
+      flex-basis: 50%;
+      font-size: 10px;
+      line-height: 1.4;
+      padding: 0;
+      
+     
+    }
+    .quantity{
+      flex-basis: 10%;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 10px;
+      gap: 0;
+    }
+    .remove-from-cart{
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+    .bag-Summary{
+      padding: 30px 20px;
+      width: auto;
+      p{
+        font-size: 14px;
+        width: 80%;
+      }
+      .inputField{
+        width:90%;
+      }
+      .orderBtn{
+        width: 50%;
+      }
+      .billingInputs{
+        width: 100%;
+      }
+      .btnDiv{
+       display: flex;
+       justify-content: center;
+      }
+    }
+    .billingDetails{
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 10px;
+      column-gap: 20px;
+      justify-content: left;
+    }
+    .billingDetails > :nth-child(1){
+      flex-basis: 90%;
+    }
+    .billingDetails > :nth-child(2),.billingDetails > :nth-child(3){
+      flex-basis: 35%;
+    }
+    }
+    @media only screen and (min-width: 1001px){
+      .Navbar{
+        width: 95%;
+        padding: 10px 2.5%;
+        justify-content: left;
+        gap: 20px;
+      }
+      #categoryDiv{
+        flex-basis: 30%;
+      }
+        .Navbar div ul{
+          flex-basis: 25%;
+          justify-content: center;
+          display: flex;
+         gap: 20px;
+         padding-left: 0;
+        }
+        .items-container{
+          margin-top: 40px;
+        }
+        .rightSection{
+          flex-basis: 30%;
+          justify-content: left;
+        }
+        .userProfile{
+          display: grid;
+          text-align: center;
+          column-gap: 10px;
+          grid-template-columns: 60% 40%;
+        }
+      .inputBox{
+        flex-basis: 50%;
+      }
+        .inputBox input{
+          width:80%;
+        }
+        .bag-items-container{
+          padding-right: 0;
+        }
+        .bag-Summary{
+          padding-left: 10px;
+          gap: 15px;
+        }
+        .bag-item-container{
+          padding-right: 0;
+        }
+        .billingInputs{
+          display: flex;
+          flex-direction: column;
+        }
+        .bag-Summary{
+          padding:60px 40px 30px; 
+        }
+        .btnDiv{
+          display: flex;
+          justify-content: center;
+        }
+        .orderBtn{
+          padding: 10px 0;
+        }
+        .billingDetails{
+          display: flex;
+          flex-wrap: wrap;
+          row-gap: 10px;
+          justify-content: left;
+          column-gap: 20px;
+        }
+        .billingDetails > :nth-child(1){
+          flex-basis: 90%;
+        }
+        
+        
+      }
